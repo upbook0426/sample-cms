@@ -1,0 +1,661 @@
+@charset "utf-8";
+
+/*COMMON------------------------------------*/
+/*------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+}
+
+body {
+	/* background: ;
+	font-size: ; */
+	color: #000;
+	font-family: "Font Awesome 5 Free","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+body > main > * {
+	box-sizing: border-box;
+}
+
+header,main,footer {
+	margin: 0 auto;
+}
+
+ul li {
+	list-style: none;
+}
+
+
+/*FONT COLOR*/
+.red {
+	color: #ff0000;
+}
+
+/*Google Material Icon*/
+.material-icons {
+	vertical-align: middle;
+}
+
+
+
+
+
+/*LINK--------------*/
+a {
+    transition: all .2s ease-in;
+}
+a:hover {
+	opacity: 0.7;
+}
+
+/*FLEXBOX-----------*/
+.flexbox {
+	display:flex;
+}
+.flexwrap {
+	flex-wrap: wrap;
+}
+.sp-ar {
+	justify-content: space-around;
+}
+.sp-bt {
+	justify-content: space-between;
+}
+.sp-ed {
+	justify-content: flex-end;
+}
+.al-ce {
+	align-items: center;
+}
+.flex-column {
+	flex-direction: column;
+}
+
+
+
+/*TABLE*/
+table.fix {
+	table-layout: fixed;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 1rem 0;
+	font-size: 100%;
+}
+table thead {
+	border-top: solid 1px #ddd;
+	border-bottom: solid 3px #ddd;
+	background: #fff;
+}
+tbody > tr {
+	border-bottom: solid 1px #ddd;
+	background: #fff;
+}
+tbody > tr:nth-of-type(odd) {
+	background: #fcfcfc;
+}
+
+th, td {
+	padding: 0.5rem;
+	text-align:left;
+	border: solid 1px #ddd;
+	font-weight: normal;
+}
+
+td.action {
+	text-align: center;
+	width: 80px;
+}
+
+td a {
+	color: #0075c2;
+}
+td a[class$="_btn"] {
+	text-decoration: none;
+}
+td .material-icons {
+	font-size: 14pt;
+	margin: 0 5px;
+}
+td .edit_btn {
+	color: #0075c2;
+}
+td .del_btn {
+	color: #0075c2;
+}
+
+
+
+
+/*FORM*/
+form.search {
+	background: #f0e8c5;
+	box-sizing: border-box;
+	padding: 1rem 2rem;
+	margin-bottom: 5rem;
+}
+form.search > .flexbox > div {
+	padding-right: 1rem;
+	box-sizing: border-box;
+}
+input {
+	box-sizing: border-box;
+}
+
+input[type="text"] {
+	width: 100%;
+	max-width: 25rem;
+}
+input[type="email"] {
+	width: 100%;
+	max-width: 50rem;
+}
+input[type="password"] {
+	width: 100%;
+	max-width: 25rem;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.5rem;
+	margin-left: 3rem;
+}
+input[type="checkbox"]:first-of-type {
+	/*margin-left: 0;*/
+}
+
+input[type="file"] {
+}
+
+input[type="search"] {
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+	padding: 1rem 0.5rem;
+	border: solid 1px #ddd;
+	border-radius: 3px;
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+	vertical-align: middle;
+}
+
+input[type="submit"] {
+	background: rgb(0, 141, 201);
+	color: #fff;
+	border: solid 1px #0075c2;
+	font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: .1em;
+    padding: 0.7rem 2rem;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.back_btn, .reset_btn {
+	background: #f6f6f6;
+	color: #555;
+	border: solid 1px #ddd;
+	font-weight: normal;
+	font-size: 14px;
+    border-radius: 4px;
+    letter-spacing: .1em;
+    padding: 0.7rem 2rem;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+	text-decoration: none;
+}
+
+.prev_btn, .dl_btn {
+    display: inline-block;
+    border: solid 1px #ddd;
+    font-weight: normal;
+    font-size: 14px;
+    border-radius: 4px;
+    letter-spacing: .1em;
+    padding: 0.5rem 2rem;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    text-decoration: none;
+	white-space: nowrap;
+}
+
+textarea {
+	overflow-y: scroll;
+}
+
+label {
+	font-size: 80%;
+}
+label::after {
+	content: "\A";
+	white-space: pre;
+}
+
+div.input_cont > div {
+	margin-bottom: 1.5rem;
+}
+div.input_cont > div > p {
+	color: #000;
+}
+
+
+/*必須アイコン*/
+span.required {
+	display: inline-block;
+	background: #ff0000;
+	color: #ffffff;
+	margin: 0 1rem;
+	padding: 0.5rem 1rem;
+	border-radius: 4px;
+	line-height: 1;
+}
+
+/*エラーメッセージ*/
+.error_msg_cont {
+	margin-bottom: 1rem;
+	margin-top: -3rem;
+	padding: 1rem;
+	background: #fbe7eb;
+	border: solid 1px #f9c2d1;
+}
+.error_msg {
+	color: #ff0000 !important;
+	font-size: 80%;
+}
+.error_msg span {
+	color: #000000 !important;
+	font-weight: bold;
+	margin-right: 1rem;
+	min-width:80px;
+	display: inline-block;
+}
+
+/*ログイン時エラーメッセージ*/
+.login-error {
+    position: relative;
+    margin: 5px 0;
+    color: red;
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+.is-invalid {
+    background: #ffd1d1 !important;
+    border: 1px solid red !important;
+}
+
+
+
+
+
+/*Pagenation*/
+.pagenation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pagenation li {
+  list-style: none;
+}
+
+.pagenation li:not(:last-child) {
+  margin-right: 2px;
+}
+
+.pagenation li a,
+.pagenation li span {
+  display: block;
+  padding: 10px;
+  line-height: 1;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  font-size: 90%;
+  color: #000;
+}
+
+.pagenation li.active a {
+  color: #fff;
+  background-color: #0075c2;
+  border: 1px solid #0075c2;
+}
+.items, .items_change {
+	margin: 0 1rem;
+	font-size: 90%;
+}
+.items_change p {
+  color:  #0075c2;
+}
+
+
+
+
+/*確認ダイアログ*/
+div[id$="_dialog"] {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform : translate(-50%,-50%);
+	transform : translate(-50%,-50%);
+	margin: 0 auto;
+	z-index: 100;
+	background: #ffffff;
+	box-sizing: border-box;
+}
+div[id$="_dialog"] h3 {
+	background: #eeeeee;
+	padding: 0.5rem 1rem;
+	margin-bottom: 0 !important;
+	color: #000;
+}
+div[id$="_dialog"] > p {
+	padding: 1rem 1rem 0;
+}
+div[id$="_dialog"] > div {
+	padding: 1rem;
+}
+div[id$="_dialog"] > div.button_cont {
+	display: flex;
+	justify-content: center;
+}
+div[id$="_dialog"] > div > button {
+	padding: 0.5rem 1rem;
+	margin: 1rem 0.5rem;
+	height: 36px;
+	width: 45%;
+	max-width: 150px;
+/*	border-radius: 18px; */
+	border-radius: 4px;
+}
+div[id$="_dialog"] > div > button#ok {
+	border: solid 1px #0075c2;
+	background: #0075c2;
+	color: #ffffff;
+}
+div[id$="_dialog"] > div > button#no {
+	border: solid 1px #555;
+	background: #f6f6f6;
+}
+
+.dialog-header {
+	position: relative;
+	background: #eeeeee;
+	display: flex;
+	align-items: center;
+}
+.dialog-header > div {
+	margin-left:3rem;
+	font-size:20px;
+}
+.dialog-header .material-icons {
+	position: absolute;
+	top: 10px;
+	right:5px;
+	cursor: pointer;
+}
+.dialog-header input[type="text"] {
+	font-size: 1.6rem;
+}
+
+.dialog-main {
+	overflow-y: auto;
+	margin-bottom: 1rem;
+	box-sizing: border-box;
+	padding: 1rem 2.5rem 3rem !important;
+	max-height:70vh;
+}
+.dialog-main h4 {
+	color: #0075c2;
+}
+.dialog-main h4 span {
+	color: #555;
+	margin-right:1rem;
+	font-weight: normal
+}
+
+#dialog_overlay {
+	width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: .3;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+/*削除*/
+#del_dialog {
+	width: 400px;
+}
+
+/*登録・編集*/
+#edit_dialog {
+	width: 100%;
+	max-width: 800px;
+}
+
+
+
+
+
+
+/*HEADER------------------------------------*/
+/*------------------------------------------*/
+header {
+	background: #fff;
+	border-bottom: solid 1px #ddd;
+	padding: 0 1rem 0 0;
+}
+h1 {
+	line-height: 0;
+}
+h1 img {
+	vertical-align: bottom;
+	width: 100%;
+	max-width: 600px;
+}
+
+#head-nav {
+	font-size: 10pt;
+}
+#head-nav li {
+	padding: 0 1.0rem;
+}
+
+#head-nav a {
+	text-decoration: none;
+	color: rgb(34,34,34);
+}
+
+#head-nav .logout {
+	background: #0075c2;
+	border-radius: 20px;
+	padding: 0.5rem 2rem;
+}
+#head-nav .logout a {
+	color: #fff;
+}
+
+
+
+/*MAIN--------------------------------------*/
+/*------------------------------------------*/
+main {
+	min-height: calc(100vh - 60px);
+	background: ;
+	flex-flow: row-reverse;
+}
+
+article {
+	width: 100%;
+}
+article#home,
+article[id^="master"],
+article[id^="file_"],
+article[id^="user_"],
+article#banner,
+article[id^="news_"],
+article#info {
+	width: calc(100vw - 200px);
+}
+aside {
+	width: 200px;
+}
+article > section {
+	margin: 2rem 2rem 5rem 2rem ;
+}
+section {
+}
+
+
+h2 {
+	border-left: solid 3px #0075c2;
+	padding-left: 1rem;
+	margin: 5rem 0 1rem;
+}
+
+
+/*パンくずリスト*/
+#breadcrumb {
+    width: 100%;
+    background-color: #e4e4e4;
+    font-size: 10pt;
+    padding: 0.5rem 1rem;
+}
+#breadcrumb ul {
+	display: flex;
+}
+#breadcrumb ul li {
+	list-style: none;
+}
+#breadcrumb > ul > li:last-of-type {
+	font-weight: bold;
+}
+#breadcrumb > ul > li:not(:last-of-type)::after {
+	content: ">";
+	margin: 0 0.5rem;
+}
+
+
+
+
+/*タブ切り替え*/
+.tab {
+	border-bottom: solid 3px #0075c2;
+}
+.tab_btn {
+	font-size: 90%;
+	display: inline-block;
+	margin: 1rem 0 0 1rem;
+	width: ;
+	padding: 0.5rem 1rem;
+	background: #f6f6f6;
+	color: #555;
+	border:solid 1px #DDD;
+	text-align:center;
+	text-decoration:none;
+}
+.tab_btn.active {
+	background: #0075c2;
+	color: #fff;
+	border:solid 1px #0075c2;
+}
+
+
+/*SIDE MENU---------------------------------*/
+/*------------------------------------------*/
+aside {
+	max-width: 200px;
+	width: 100%;
+	border-right: solid 1px #ddd;
+	background: #f6f6f6;
+}
+aside p {
+	font-size: 100%;
+}
+aside nav > ul > li {
+	border-bottom: solid 1px #ddd;
+	text-indent: 1rem;
+	padding: 1rem 0;
+}
+
+aside nav > ul > li > ul {
+	text-indent: 2rem;
+	font-size: 90%;
+}
+
+aside a {
+	color: #0075c2;
+}
+
+/*FOOTER------------------------------------*/
+/*------------------------------------------*/
+footer {
+	border-top: solid 1px #ddd;
+	box-sizing: border-box;
+	padding: 0.2rem 0;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+footer .footer_logo a {
+	display: flex;
+	align-items: center;
+	padding: 10px;
+}
+footer .footer_copyright {
+	text-align:center;
+}
+footer .footer_copyright small {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+/*フラッシュメッセージ*/
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-success {
+    position: fixed;
+    top: 9%;
+    width: 100%;
+    color: #2e79af;
+    background-color: #c6e9f1;
+    border-color: #c2cfd3;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 99;
+}
+
+.alert-error {
+    position: fixed;
+    top: 9%;
+    width: 100%;
+    background: #f00;
+    color: #fff;
+    /* font-size: 1.5rem; */
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 99;
+}
